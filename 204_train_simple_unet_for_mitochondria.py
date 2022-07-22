@@ -89,7 +89,7 @@ model = get_model()
 
 #If starting with pre-trained weights. 
 #model.load_weights('mitochondria_gpu_tf1.4.hdf5')
-
+model.load_weights('mitochondria_test.hdf5')
 history = model.fit(X_train, y_train, 
                     batch_size = 16, 
                     verbose=1, 
@@ -120,10 +120,10 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
-acc = history.history['acc']
-#acc = history.history['accuracy']
-val_acc = history.history['val_acc']
-#val_acc = history.history['val_accuracy']
+#acc = history.history['acc']
+acc = history.history['accuracy']
+#val_acc = history.history['val_acc']
+val_acc = history.history['val_accuracy']
 
 plt.plot(epochs, acc, 'y', label='Training acc')
 plt.plot(epochs, val_acc, 'r', label='Validation acc')
@@ -184,8 +184,8 @@ plt.title('Prediction of external Image')
 plt.imshow(prediction_other, cmap='gray')
 plt.show()
 
-#plt.imsave('input.jpg', test_img[:,:,0], cmap='gray')
-#plt.imsave('data/results/output2.jpg', prediction_other, cmap='gray')
+plt.imsave('input.jpg', test_img[:,:,0], cmap='gray')
+plt.imsave('data/results/output2.jpg', prediction_other, cmap='gray')
 
 
 

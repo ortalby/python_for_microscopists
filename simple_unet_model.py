@@ -1,8 +1,11 @@
 #https://youtu.be/csFGTLT6_WQ
-# u-net model 
-
-from keras.models import Model
-from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, concatenate, Conv2DTranspose, BatchNormalization, Dropout, Lambda
+# u-net model
+#from keras.engine import Input
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, UpSampling2D, concatenate, Conv2DTranspose, BatchNormalization,  Dense, Flatten, Conv3D, MaxPooling3D, Dropout, BatchNormalization, LeakyReLU, Input
+from tensorflow.keras.regularizers import l2
+#from keras.models import Model
+#from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, concatenate, Conv2DTranspose, BatchNormalization, Dropout, Lambda
 
 ################################################################
 def simple_unet_model(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS):
